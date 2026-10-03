@@ -1,0 +1,15 @@
+version: '3'
+tasks:
+  fmt:
+    desc: Format all nix files
+    cmds:
+      - nix fmt
+  lint:
+    desc: Lint nix files
+    cmds:
+      - statix check --ignore .direnv .
+      - deadnix --fail .
+  test:
+    desc: Run the unit tests in tests/secrets.nix
+    cmds:
+      - nix flake check

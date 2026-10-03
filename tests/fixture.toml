@@ -1,0 +1,12 @@
+[project]
+name = "fixture"
+revision = "1.0"
+
+[providers]
+production = "onepassword://Production"
+
+[defaults]
+providers = ["production"]
+
+[profiles.default]
+DATABASE_PASSWORD = { description = "exercises the default chain", ref = { item = "db", field = "password" } }
